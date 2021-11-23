@@ -1,20 +1,37 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 
 interface TextInputProps {
   text: string;
+  placeholder?: string;
   updateText: (text: string) => void;
 }
 
-const TextInput = ({ text, updateText }: TextInputProps): JSX.Element => {
+const TextInput = ({
+  text,
+  placeholder,
+  updateText,
+}: TextInputProps): JSX.Element => {
+  const [input, setInput] = useState<string | undefined>(text);
+
   const handleInput = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    updateText(event.target.value);
+    setInput(event.target.value);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      updateText(input || "");
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [input]);
+
   return (
     <textarea
       className="textarea"
-      value={text}
+      value={input}
       onChange={handleInput}
-      placeholder="Write words"
+      placeholder={placeholder}
       autoFocus
     />
   );
