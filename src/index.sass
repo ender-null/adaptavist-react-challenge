@@ -6,8 +6,8 @@ $horizontal-margin: 12px
 $border-radius: 8px
 $textbox-color: #e4e4e4
 $button-color: #6200EE
-$word-color: #e4ffe4
-$count-color: #e4e4ff
+$word-color: #e4e4ff
+$count-color: #aaffaa
 $font-size: 16px
 $font-size-small: 14px
   
@@ -34,12 +34,13 @@ body
 
 button
   padding: $vertical-padding $horizontal-padding
-  margin: 0 $horizontal-margin $vertical-margin 0
+  margin: $vertical-margin $horizontal-margin 0 0
   border: 0
   font-family: $font-family
   color: white
   border-radius: $border-radius
   font-size: $font-size-small
+  font-weight: 600
 
   &.selected
     background: $button-color
@@ -57,13 +58,15 @@ button
     font-size: $font-size
 
     .word
-      background: $word-color
+      // background: $word-color
       border-radius: $border-radius
       padding: $vertical-padding $horizontal-padding
+      font-weight: 800
 
     .count
       background: $count-color
       border-radius: $border-radius
       padding: $vertical-padding $horizontal-padding
       margin-left: $vertical-margin
+      font-weight: 600
 

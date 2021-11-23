@@ -16,7 +16,9 @@ const App = (): JSX.Element => {
   const countWords = (text: string) => {
     const wordsSeparatedBySpaces = text.replace(/[\s,.!?()]+/g, " ").trim();
     const list = wordsSeparatedBySpaces.split(" ");
-    setTotalWords(list.length);
+    wordsSeparatedBySpaces.length > 0
+      ? setTotalWords(list.length)
+      : setTotalWords(0);
     const wordWithCount: Words = {};
     list.forEach((word: string) => {
       if (word.length > 0) {
@@ -31,7 +33,7 @@ const App = (): JSX.Element => {
   };
 
   const renderList = () => {
-    if (words) {
+    if (words && Object.keys(words).length > 0) {
       const list: string[] = Object.keys(words).sort((a, b) => {
         if (sorting === "numerical") {
           if (words[a] === words[b]) {
@@ -42,8 +44,18 @@ const App = (): JSX.Element => {
           return a > b ? 1 : -1;
         }
       });
+      const mostCommonWord = Object.keys(words).reduce((prev, current) => {
+        return words[prev] > words[current] ? prev : current;
+      });
       return list.map((word: string) => {
-        return <Item key={word} word={word} count={words[word]} />;
+        return (
+          <Item
+            key={word}
+            word={word}
+            count={words[word]}
+            rarity={(words[word] / words[mostCommonWord]) * 5}
+          />
+        );
       });
     }
   };
@@ -56,8 +68,10 @@ const App = (): JSX.Element => {
         placeholder={"Write here"}
         updateText={countWords}
       />
-      <h2>{`${Object.keys(words).length} of ${totalWords} unique words`}</h2>
       <Sorting currentSorting={sorting} changeSorting={setSorting} />
+      {totalWords > 0 && (
+        <h2>{`${Object.keys(words).length} of ${totalWords} unique words`}</h2>
+      )}
       <ul className="list">{renderList()}</ul>
     </div>
   );
