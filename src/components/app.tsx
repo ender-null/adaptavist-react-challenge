@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TextInput from "./input";
+import TextInput from "./text-input";
 import Item from "./item";
 import Sorting, { SortingTypes } from "./sorting";
 
