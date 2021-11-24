@@ -1,9 +1,9 @@
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
-import Sorting, { SortingTypes } from "../../components/sorting";
+import Sorting, { SortingProps, SortingTypes } from "../../components/sorting";
 
 describe("Sorting", () => {
-  const props = {
+  const props: SortingProps = {
     currentSorting: "alphabetical",
     changeSorting: (sort: SortingTypes) => {
       return sort;

@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ItemProps {
+export interface ItemProps {
   word: string;
   count: number;
   rarity: number;

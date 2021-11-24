@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput should render the component 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea"
+    placeholder="Placeholder"
+  >
+    test text
+  </textarea>
+</DocumentFragment>
+`;

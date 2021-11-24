@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 
-interface TextInputProps {
+export interface TextInputProps {
   text: string;
   placeholder?: string;
   updateText: (text: string) => void;

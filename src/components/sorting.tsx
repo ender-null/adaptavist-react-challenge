@@ -2,7 +2,7 @@ import React from "react";
 
 export type SortingTypes = "alphabetical" | "numerical";
 
-interface SortingProps {
+export interface SortingProps {
   currentSorting: string;
   changeSorting: (sort: SortingTypes) => void;
 }

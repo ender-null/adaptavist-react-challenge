@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Item from "../../components/item";
+import Item, { ItemProps } from "../../components/item";
 
 describe("App", () => {
-  const props = {
+  const props: ItemProps = {
     word: "test",
     count: 3,
     rarity: 5,
