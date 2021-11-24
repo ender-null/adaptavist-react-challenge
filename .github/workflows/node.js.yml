@@ -25,6 +25,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: export NODE_OPTIONS=--openssl-legacy-provider
     - run: yarn --frozen-lockfile
     - run: yarn build
     - run: yarn test
