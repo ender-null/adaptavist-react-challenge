@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render the component 1`] = `
+<DocumentFragment>
+  <li>
+    <span
+      class="word"
+    >
+      test
+    </span>
+    <span
+      class="count"
+      style="background: rgb(153, 153, 153);"
+    >
+      x3
+    </span>
+  </li>
+</DocumentFragment>
+`;

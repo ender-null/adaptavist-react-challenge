@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item should render the component 1`] = `
+<DocumentFragment>
+  <div
+    class="app"
+  >
+    <h1>
+      Adaptavist React Challenge
+    </h1>
+    <textarea
+      class="textarea"
+      placeholder="Write here"
+    />
+    <div
+      class="sorting"
+    >
+      <button
+        class="selected"
+      >
+        Alphabetical
+      </button>
+      <button
+        class="unselected"
+      >
+        Numerical
+      </button>
+    </div>
+    <ul
+      class="list"
+    />
+  </div>
+</DocumentFragment>
+`;
